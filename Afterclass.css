@@ -1,0 +1,23 @@
+/* Pseudo-class: style the first item */
+.fruit-list li:first-child {
+    background-color: #f0f8ff;
+    font-weight: bold;
+}
+
+/* Pseudo-class: hover effect */
+.fruit-list li:hover {
+    background-color: #ffe4e1;
+    cursor: pointer;
+}
+
+/* Pseudo-element: custom bullet before each item */
+.fruit-list li::before {
+    content: "🍎 ";
+    margin-right: 5px;
+}
+
+/* Pseudo-element: bold the first letter of each item */
+.fruit-list li::first-letter {
+    font-weight: bold;
+    font-size: 1.1em;
+}
