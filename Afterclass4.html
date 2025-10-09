@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dog Theme - CSS Position Example</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            background: #fffdf7;
+        }
+
+        /* Fixed Header */
+        .fixed-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #6b4f4f;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            opacity: 0.9;
+            z-index: 1000;
+        }
+
+        /* Sticky Element */
+        .sticky-box {
+            position: sticky;
+            top: 60px;
+            background: #ffcc70;
+            padding: 10px;
+            margin: 20px;
+            opacity: 0.8;
+            font-weight: bold;
+        }
+
+        /* Relative Container */
+        .relative-container {
+            position: relative;
+            height: 250px;
+            background: #fcecd6;
+            margin: 20px;
+            padding: 20px;
+            opacity: 0.95;
+            border-radius: 8px;
+        }
+
+        /* Absolute Box inside relative container */
+        .absolute-box {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #f67280;
+            color: white;
+            padding: 10px;
+            opacity: 0.7;
+            border-radius: 5px;
+        }
+
+        /* Content */
+        .content {
+            height: 1500px;
+            background: linear-gradient(#fffdf7, #e6f7ff);
+            padding: 20px;
+        }
+
+        img.dog-photo {
+            width: 200px;
+            border-radius: 10px;
+            opacity: 0.85;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="fixed-header">🐾 Welcome to the Dog Zone! 🐶</div>
+
+    <div class="content">
+        <div class="sticky-box"> Did you know? Dogs can learn over 100 words!</div>
+
+        <div class="relative-container">
+            <p>This is a happy dog relaxing in the yard.</p>
+            <img class="dog-photo" src="https://placedog.net/400/300?id=12" alt="Dog">
+            <div class="absolute-box">Bark! 🐕</div>
+        </div>
+
+        <p>Scroll to see how the sticky and fixed elements!
+            scroll through pages!</p>
+    </div>
+
+</body>
+
+</html>
