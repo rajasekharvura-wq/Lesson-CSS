@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Hobbies</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .hobby-section {
+            padding: 60px 0;
+        }
+
+        .hobby-card {
+            border: none;
+            transition: all 0.3s ease;
+            border-radius: 12px;
+        }
+
+        .hobby-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .hobby-img {
+            height: 220px;
+            object-fit: cover;
+            border-radius: 12px 12px 0 0;
+        }
+
+        .card-title {
+            font-weight: 600;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Hobbies Section -->
+    <div class="container hobby-section text-center">
+        <h2 class="section-title text-primary mb-4">My Hobbies</h2>
+        <p class="text-muted mb-5">Here are some of the activities I truly enjoy doing in my free time.</p>
+
+        <div class="row">
+            <!-- Cooking & Baking -->
+            <div class="col-md-4 mb-4">
+                <div class="card hobby-card border-primary">
+                    <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19"
+                        class="card-img-top hobby-img" alt="Cooking and Baking">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">Cooking & Baking</h5>
+                        <p class="card-text">I love experimenting with new recipes and creating sweet and savory dishes
+                            that make people smile.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Badminton -->
+            <div class="col-md-4 mb-4">
+                <div class="card hobby-card border-danger">
+                    <img src="https://www.racquetpoint.com/cdn/shop/articles/badminton-the-ultimate-guide-to-the-racquet-sport-460186.jpg?v=1741601376&width=1400"
+                        class="card-img-top hobby-img" alt="Badminton">
+                    <div class="card-body">
+                        <h5 class="card-title text-danger">Badminton</h5>
+                        <p class="card-text">Playing badminton helps me stay fit and energized. It’s both fun and a
+                            great stress reliever!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Painting -->
+            <div class="col-md-4 mb-4">
+                <div class="card hobby-card border-primary">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkVWOXXPx1T5N42hIC5EEtJAAd4qKY1hd9Gg&s"
+                        class="card-img-top hobby-img" alt="Art">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">Painting</h5>
+                        <p class="card-text">Art allows me to express emotions through colors and creativity on
+                            a canvas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
