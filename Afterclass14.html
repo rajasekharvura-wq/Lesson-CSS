@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Methods and Loops</title>
+</head>
+<body>
+
+<h2>Methods and Loops Output</h2>
+
+<script>
+    // Print random numbers using loop
+    document.write("Random Numbers:<br>");
+
+    for (let i = 1; i <= 5; i++) {
+        let randomNumber = Math.floor(Math.random() * 100) + 1;
+        document.write(randomNumber + "<br>");
+    }
+
+    // Display current date
+    let currentDate = new Date();
+    document.write("<br>Current Date:<br>");
+    document.write(currentDate.toDateString() + "<br>");
+
+    // Random number and rounding
+    let randomDecimal = Math.random() * 10;
+    let roundedNumber = Math.round(randomDecimal);
+
+    document.write("<br>Random Decimal Number:<br>");
+    document.write(randomDecimal + "<br>");
+
+    document.write("Rounded Number:<br>");
+    document.write(roundedNumber + "<br>");
+
+    // Switch statement
+    document.write("<br>Switch Statement Result:<br>");
+
+    switch (roundedNumber) {
+        case 0:
+            document.write("The number is Zero");
+            break;
+        case 5:
+            document.write("The number is Five");
+            break;
+        case 10:
+            document.write("The number is Ten");
+            break;
+        default:
+            document.write("The number is between 1 and 9");
+    }
+</script>
+
+</body>
+</html>
