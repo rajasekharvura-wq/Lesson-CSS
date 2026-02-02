@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HTML DOM Example</title>
+</head>
+<body>
+
+  <p id="obj"></p>
+  <p id="arrIndex"></p>
+  <p id="arrJoin"></p>
+  <p id="arrPop"></p>
+
+  <script>
+    // Object
+    var person = {
+      name: "Sam",
+      age: 20
+    };
+
+    // Array
+    var colors = ["Red", "Blue", "Green"];
+
+    // Object values
+    document.getElementById("obj").innerHTML =
+      person.name + " is " + person.age + " years old";
+
+    // Array index
+    document.getElementById("arrIndex").innerHTML =
+      "First color: " + colors[0];
+
+    // Join array
+    document.getElementById("arrJoin").innerHTML =
+      "All colors: " + colors.join(", ");
+
+    // Pop array
+    colors.pop();
+
+    // After pop
+    document.getElementById("arrPop").innerHTML =
+      "After pop: " + colors.join(", ");
+  </script>
+
+</body>
+</html>
