@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Map and Arrange Array</title>
+</head>
+
+<body>
+
+<h2>Map and Arrange an Array</h2>
+
+<p id="result"></p>
+
+<script>
+
+// Create array
+let numbers = [3, 1, 4, 2, 5];
+
+// Map array (multiply each number by 2)
+let mapped = numbers.map(function(n){
+    return n * 2;
+});
+
+// Sort ascending
+let ascending = [...mapped].sort(function(a,b){
+    return a - b;
+});
+
+// Sort descending
+let descending = [...mapped].sort(function(a,b){
+    return b - a;
+});
+
+// Show results
+document.getElementById("result").innerHTML =
+"Original Array: " + numbers + "<br><br>" +
+"Mapped Array (x2): " + mapped + "<br><br>" +
+"Ascending Order: " + ascending + "<br><br>" +
+"Descending Order: " + descending;
+
+</script>
+
+</body>
+</html>
