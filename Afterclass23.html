@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Async JS Example</title>
+</head>
+<body>
+
+  <h1>Async/Await Demo</h1>
+  <button onclick="main()">Load Data</button>
+
+  <p id="output"></p>
+
+  <script>
+    // Async function that returns JSON (simulated)
+    function getJson() {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve({ name: "John", age: 30 });
+        }, 1000);
+      });
+    }
+
+    // Function that depends on async result
+    async function main() {
+      try {
+        const data = await getJson(); // wait for result
+        document.getElementById("output").innerText =
+          "Name: " + data.name + ", Age: " + data.age;
+      } catch (error) {
+        document.getElementById("output").innerText =
+          "Error: " + error;
+      }
+    }
+  </script>
+
+</body>
+</html>
