@@ -1,7 +1,7 @@
 body{
     margin:0;
     font-family:"Baloo Tamma 2", sans-serif;
-    background:#fff;
+    background:linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 /* Full width navbar */
 .navigation{
@@ -23,4 +23,46 @@ width:auto;
 }
 .navigation-link:hover{
     color:#f2a900 !important;
+}
+.about{
+    background:rgba(0,0,0,0.5);
+    margin-top:100px;
+    border-radius: 15px;
+}
+.m-heading{
+    font: size 2.5rem;
+    font-weight: 600;
+    margin: 20px 0;
+}
+.btn-outline-warning{
+    border-width: 2px;
+    font-weight: 600;
+    padding: 10px 30px;
+    transition: all 0.3s ease;
+}
+.btn-outline-warning:hover{
+    background:#ffc107;
+    transform: scale(1.05);
+}
+#projects h1{
+    font-weight: 900;
+}
+.card{
+    border: 0;
+    border-radius: 3px;
+    box-shadow: 0 6px 18px rgba(0,0,0,1);
+}
+.card-img-top{
+padding: 18px;
+height: 13rem;
+object-fit: contain;
+}
+.card-text{
+    color: #6f7780;
+    font-size: 0.85rem;
+}
+.btn-warning{
+    font-weight: 700;
+    font-size: 0.8rem;
+    border-radius: 3px;
 }
