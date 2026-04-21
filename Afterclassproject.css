@@ -1,34 +1,114 @@
+/* ===== GLOBAL FONTS ===== */
 body {
-    margin: 0;
     font-family: 'Baloo Tamma 2', cursive;
+    background-color: #ffffff;
+    color: #f5f5f5;
 }
 
-/* Navigation bar */
+/* Headings */
+h1, h2, h3, h4, h5 {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* ===== NAVBAR ===== */
 .navigation {
-    background-color: #1a1a1a;
+    background-color: #1f1f1f;
 }
 
 .navigation-link {
-    font-size: 18px;
+    font-weight: 500;
     transition: 0.3s;
 }
 
 .navigation-link:hover {
-    color: #f8c146;
-    text-decoration: none;
+    color: #ffbaeb !important;
 }
 
-/* Banner section */
+/* ===== BANNER ===== */
 .banner {
-    height: 90vh;
-    background: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836') no-repeat center center/cover;
+    height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                url('https://images.unsplash.com/photo-1504674900247-0877df9cc836');
+    background-size: cover;
+    background-position: center;
 }
 
-.banner h1 {
-    font-family: 'Roboto Slab', serif;
-    font-weight: 700;
+/* ===== ABOUT SECTION ===== */
+.about {
+    background-color: #ffffff;
 }
 
-.banner p {
-    font-size: 20px;
+.m-heading {
+    color: #ffbaeb;
+}
+
+/* ===== MENU / CARDS ===== */
+.card {
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-title {
+    color: #000000;
+}
+
+/* ===== BUTTONS ===== */
+.btn-warning {
+    background-color: #ffbaeb;
+    border: none;
+    color: #000;
+    font-weight: 600;
+}
+
+.btn-warning:hover {
+    background-color: #ffbaeb;
+}
+
+.btn-outline-warning {
+    border-color: #ffbaeb;
+    color: #ffbaeb;
+}
+
+.btn-outline-warning:hover {
+    background-color: #ffbaeb;
+    color: #000;
+}
+
+/* ===== TEXT COLORS ===== */
+.text-warning {
+    color: #ffbaeb !important;
+}
+/* ===== PORTFOLIO SECTION ===== */
+#portfolio {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    padding: 30px;
+}
+
+/* Image box */
+.portfolio-box {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #ffbaeb;
+}
+
+/* Images */
+.portfolio-box img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: 0.4s ease;
+}
+
+/* Hover effect */
+.portfolio-box:hover img {
+    transform: scale(1.1);
 }
