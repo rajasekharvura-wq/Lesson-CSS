@@ -112,3 +112,27 @@ h1, h2, h3, h4, h5 {
 .portfolio-box:hover img {
     transform: scale(1.1);
 }
+/* ===== SOCIAL MEDIA ===== */
+.social-icon {
+    color: #000;
+    transition: 0.3s;
+}
+
+.social-icon:hover {
+    color: #ffbaeb;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background-color: #1f1f1f;
+    color: #ffffff;
+}
+
+.footer-link {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    color: #ffbaeb;
+}
