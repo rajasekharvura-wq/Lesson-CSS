@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bank App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 400px;
+      margin: 40px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    .balance {
+      text-align: center;
+      margin: 20px 0;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .summary {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .income {
+      color: green;
+    }
+
+    .expense {
+      color: red;
+    }
+
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+    }
+
+    button {
+      background: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      padding: 10px;
+      margin: 5px 0;
+      display: flex;
+      justify-content: space-between;
+      border-right: 5px solid;
+    }
+
+    .plus {
+      border-color: green;
+    }
+
+    .minus {
+      border-color: red;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Bank App</h2>
+
+  <div class="balance">Balance: $<span id="balance">0</span></div>
+
+  <div class="summary">
+    <div class="income">Income: $<span id="income">0</span></div>
+    <div class="expense">Expense: $<span id="expense">0</span></div>
+  </div>
+
+  <h3>Add Transaction</h3>
+  <input type="text" id="text" placeholder="Enter description">
+  <input type="number" id="amount" placeholder="Enter amount (+income, -expense)">
+  <button onclick="addTransaction()">Add</button>
+
+  <h3>History</h3>
+  <ul id="list"></ul>
+</div>
+
+<script>
+  let transactions = [];
+
+  function addTransaction() {
+    const text = document.getElementById("text").value;
+    const amount = +document.getElementById("amount").value;
+
+    if (text === "" || amount === 0) {
+      alert("Please enter valid data");
+      return;
+    }
+
+    const transaction = {
+      id: Date.now(),
+      text,
+      amount
+    };
+
+    transactions.push(transaction);
+
+    updateUI();
+
+    document.getElementById("text").value = "";
+    document.getElementById("amount").value = "";
+  }
+
+  function updateUI() {
+    const list = document.getElementById("list");
+    list.innerHTML = "";
+
+    let income = 0;
+    let expense = 0;
+
+    transactions.forEach(t => {
+      const li = document.createElement("li");
+      li.classList.add(t.amount > 0 ? "plus" : "minus");
+
+      li.innerHTML = `
+        ${t.text} 
+        <span>$${t.amount}</span>
+      `;
+
+      list.appendChild(li);
+
+      if (t.amount > 0) income += t.amount;
+      else expense += t.amount;
+    });
+
+    document.getElementById("income").innerText = income;
+    document.getElementById("expense").innerText = Math.abs(expense);
+    document.getElementById("balance").innerText = income + expense;
+  }
+</script>
+
+</body>
+</html>
