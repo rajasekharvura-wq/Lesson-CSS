@@ -78,6 +78,19 @@
     .minus {
       border-color: red;
     }
+
+    /* ADDED VALIDATION MESSAGE STYLE */
+    .error {
+      color: red;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    .success {
+      color: green;
+      font-size: 14px;
+      margin-top: 5px;
+    }
   </style>
 </head>
 <body>
@@ -97,6 +110,9 @@
   <input type="number" id="amount" placeholder="Enter amount (+income, -expense)">
   <button onclick="addTransaction()">Add</button>
 
+  <!-- ADDED VALIDATION MESSAGE AREA -->
+  <div id="message"></div>
+
   <h3>History</h3>
   <ul id="list"></ul>
 </div>
@@ -104,9 +120,56 @@
 <script>
   let transactions = [];
 
+  /* ADDED VALIDATION FUNCTION */
+  function validateInput(text, amount) {
+    const message = document.getElementById("message");
+
+    // Clear previous message
+    message.innerHTML = "";
+
+    // Empty field validation
+    if (text.trim() === "") {
+      message.innerHTML = "<p class='error'>Description cannot be empty.</p>";
+      return false;
+    }
+
+    // Description length validation
+    if (text.length < 3) {
+      message.innerHTML = "<p class='error'>Description must be at least 3 characters long.</p>";
+      return false;
+    }
+
+    // Special character validation
+    const textPattern = /^[A-Za-z0-9\s]+$/;
+
+    if (!textPattern.test(text)) {
+      message.innerHTML = "<p class='error'>Description can only contain letters and numbers.</p>";
+      return false;
+    }
+
+    // Amount validation
+    if (isNaN(amount) || amount === 0) {
+      message.innerHTML = "<p class='error'>Amount must be a valid number and cannot be 0.</p>";
+      return false;
+    }
+
+    // Large amount validation
+    if (Math.abs(amount) > 1000000) {
+      message.innerHTML = "<p class='error'>Amount is too large.</p>";
+      return false;
+    }
+
+    return true;
+  }
+
   function addTransaction() {
     const text = document.getElementById("text").value;
     const amount = +document.getElementById("amount").value;
+
+    /* ADDED VALIDATION CHECK */
+    if (!validateInput(text, amount)) {
+      return;
+    }
 
     if (text === "" || amount === 0) {
       alert("Please enter valid data");
@@ -122,6 +185,10 @@
     transactions.push(transaction);
 
     updateUI();
+
+    // ADDED SUCCESS MESSAGE
+    document.getElementById("message").innerHTML =
+      "<p class='success'>Transaction added successfully.</p>";
 
     document.getElementById("text").value = "";
     document.getElementById("amount").value = "";
